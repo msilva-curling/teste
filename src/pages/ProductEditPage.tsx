@@ -1,6 +1,6 @@
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
+import { customZodResolver } from '@/lib/utils'
 import * as z from 'zod'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -46,7 +46,7 @@ const ProductEditPage = () => {
   const isEditing = Boolean(id)
 
   const form = useForm<z.infer<typeof productSchema>>({
-    resolver: zodResolver(productSchema),
+    resolver: customZodResolver(productSchema),
     defaultValues: {
       name: isEditing ? 'Ebook de Finanças Pessoais' : '',
       description: isEditing

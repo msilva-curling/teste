@@ -1,6 +1,6 @@
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import { useForm, useFieldArray } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
+import { customZodResolver } from '@/lib/utils'
 import * as z from 'zod'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -47,7 +47,7 @@ const CourseEditPage = () => {
   const isEditing = Boolean(id)
 
   const form = useForm<z.infer<typeof courseSchema>>({
-    resolver: zodResolver(courseSchema),
+    resolver: customZodResolver(courseSchema),
     defaultValues: {
       name: isEditing ? 'React do Zero ao Avançado' : '',
       description: isEditing
