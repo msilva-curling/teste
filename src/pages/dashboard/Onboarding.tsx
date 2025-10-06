@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Progress } from '@/components/ui/progress'
 import { Button } from '@/components/ui/button'
 import { CheckCircle2, Circle } from 'lucide-react'
+import { cn } from '@/lib/utils'
 
 const steps = [
   { id: 'profile', title: 'Complete seu perfil', completed: true },
