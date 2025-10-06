@@ -1,10 +1,35 @@
-/* Home Page - Replace this page layout, components, content, behavior with what you want and translate to the language of the user */
+import { Onboarding } from './dashboard/Onboarding'
+import { EarningsOverview } from './dashboard/EarningsOverview'
+import { ActivityFeed } from './dashboard/ActivityFeed'
+import { Insights } from './dashboard/Insights'
+import { QuickLinks } from './dashboard/QuickLinks'
+
 const Index = () => {
+  const isNewUser = true // Simulação de novo usuário
+
   return (
-    <div className="container mx-auto py-8 px-4">
-      <h1 className="text-3xl font-bold mb-6">
-        This is a example page ready to be rewritten with your own content
-      </h1>
+    <div className="space-y-6">
+      <div className="flex flex-col sm:flex-row justify-between items-start gap-4">
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
+          <p className="text-muted-foreground">Bem-vindo de volta, Sofia!</p>
+        </div>
+      </div>
+
+      {isNewUser && <Onboarding />}
+
+      <EarningsOverview />
+
+      <div className="grid gap-6 lg:grid-cols-3">
+        <div className="lg:col-span-2">
+          <ActivityFeed />
+        </div>
+        <div className="lg:col-span-1">
+          <Insights />
+        </div>
+      </div>
+
+      <QuickLinks />
     </div>
   )
 }
