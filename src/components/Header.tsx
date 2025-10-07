@@ -74,7 +74,7 @@ export const Header = () => {
             alt="SaaS Lucrativo Logo"
             className="h-8 w-8"
           />
-          <span className="font-bold">teste12??3</span>
+          <span className="font-bold">matheus</span>
         </Link>
 
         <div className="hidden md:flex flex-1">
